@@ -1,4 +1,4 @@
-package com.example.composesample
+package com.example.composesample.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
