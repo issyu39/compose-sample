@@ -1,8 +1,12 @@
 package com.example.composesample.ui
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -17,7 +21,10 @@ class MainActivity : ComponentActivity() {
             ComposeSampleTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    Column {
+                        Greeting("Android")
+                        NavigationButton(this@MainActivity)
+                    }
                 }
             }
         }
@@ -27,6 +34,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Text(text = "Hello $name!")
+}
+
+@Composable
+fun NavigationButton(context: Context) {
+    Button(
+        onClick = { Toast.makeText(context, "Message", Toast.LENGTH_SHORT).show() }
+    ) {
+        Text(text = "Button")
+    }
 }
 
 @Preview(showBackground = true)
