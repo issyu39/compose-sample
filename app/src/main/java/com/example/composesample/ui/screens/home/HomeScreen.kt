@@ -1,9 +1,5 @@
 package com.example.composesample.ui.screens.home
 
-import android.app.Activity
-import android.os.Bundle
-import android.os.PersistableBundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Column
@@ -11,7 +7,6 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,7 +18,11 @@ import com.example.composesample.ui.theme.ComposeSampleTheme
 @Composable
 fun HomeScreen() {
     ComposeSampleTheme {
-        Column(modifier = Modifier.background(colorResource(id = R.color.navy))) {
+        Column(
+            modifier = Modifier
+                .background(colorResource(id = R.color.navy))
+                .padding(top = 16.dp)
+        ) {
             TopAppBar(
                 title = {
                     Text(text = "Compose Sample")

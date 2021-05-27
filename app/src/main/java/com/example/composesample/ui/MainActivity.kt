@@ -7,6 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
+import androidx.core.view.WindowCompat
 import com.example.composesample.navigation.MainNavigator
 import com.example.composesample.ui.theme.ComposeSampleTheme
 import com.google.accompanist.systemuicontroller.LocalSystemUiController
@@ -15,6 +16,7 @@ import com.google.accompanist.systemuicontroller.rememberAndroidSystemUiControll
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             // Remember a controller, and provide it to the LocalSystemUiController
             val controller = rememberAndroidSystemUiController()
