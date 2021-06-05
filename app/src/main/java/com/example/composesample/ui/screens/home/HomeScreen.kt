@@ -12,8 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.composesample.ui.theme.ComposeSampleTheme
-import com.example.composesample.ui.theme.Dark
-import com.example.composesample.ui.theme.Navy
 
 @Composable
 fun HomeScreen() {
@@ -34,7 +32,7 @@ fun HomeTopBar() {
                 Icon(imageVector = Icons.Filled.Menu, contentDescription = "Menu Btn")
             }
         },
-        backgroundColor = Navy,
+        backgroundColor = MaterialTheme.colors.primaryVariant,
         contentColor = Color.White
     )
 }
@@ -43,7 +41,7 @@ fun HomeTopBar() {
 fun HomeContents() {
     Column(
         modifier = Modifier
-            .background(Dark)
+            .background(MaterialTheme.colors.surface)
             .fillMaxWidth()
             .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
