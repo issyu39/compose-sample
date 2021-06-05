@@ -10,42 +10,40 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
-import com.example.composesample.R
 import com.example.composesample.ui.theme.ComposeSampleTheme
+import com.example.composesample.ui.theme.Dark
+import com.example.composesample.ui.theme.Navy
 
 @Composable
 fun HomeScreen() {
     ComposeSampleTheme {
-        Column(
-            modifier = Modifier
-                .background(colorResource(id = R.color.navy))
-                .padding(top = 16.dp)
-        ) {
-            TopAppBar(
-                title = {
-                    Text(text = "Compose Sample")
-                },
-                navigationIcon = {
-                    IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Filled.Menu, contentDescription = "Menu Btn")
-                    }
-                },
-                backgroundColor = Color.Transparent,
-                contentColor = Color.White,
-                elevation = 2.dp
-            )
-            HomeContents()
-        }
-
+        Scaffold(
+            topBar = { HomeTopBar() },
+            content = { HomeContents() },
+        )
     }
+}
+
+@Composable
+fun HomeTopBar() {
+    TopAppBar(
+        title = { Text(text = "Compose Sample") },
+        navigationIcon = {
+            IconButton(onClick = { }) {
+                Icon(imageVector = Icons.Filled.Menu, contentDescription = "Menu Btn")
+            }
+        },
+        backgroundColor = Navy,
+        contentColor = Color.White
+    )
 }
 
 @Composable
 fun HomeContents() {
     Column(
         modifier = Modifier
+            .background(Dark)
             .fillMaxWidth()
             .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
